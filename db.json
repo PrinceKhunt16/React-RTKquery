@@ -1,0 +1,14 @@
+{
+  "contacts": [
+    {
+      "id": 1,
+      "name": "Mahendra Dhoni",
+      "email": "mahendra@gmail.com"
+    },
+    {
+      "id": 2,
+      "name": "Jasprit Bumrah",
+      "email": "jasprit@gmail.com"
+    }
+  ]
+}
