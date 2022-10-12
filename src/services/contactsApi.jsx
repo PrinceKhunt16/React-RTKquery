@@ -5,19 +5,19 @@ export const contactsApi = createApi({
     baseQuery: fetchBaseQuery({ 
         baseUrl: 'http://localhost:4000/' 
     }),
-    tagTypes: ['ContactTag'],
+    tagTypes: ['Contact'],
     endpoints: (builder) => ({
         contacts: builder.query({
             query: () => ({
                 url: '/contacts',
             }),
-            providesTags: ['ContactTag'] 
+            providesTags: ['Contact'] 
         }),
         contact: builder.query({
             query: (id) => ({ 
                 url: `/contacts/${id}`,
             }),
-            providesTags: ['ContactTag'] 
+            providesTags: ['Contact'] 
         }),
         addContact: builder.mutation({
             query: (contact) => ({
@@ -25,7 +25,7 @@ export const contactsApi = createApi({
                 method: 'POST',
                 body: contact
             }),
-            invalidatesTags: ['ContactTag']
+            invalidatesTags: ['Contact']
         }),
         updateContact: builder.mutation({
             query: ({id, ...contact}) => ({
@@ -33,14 +33,14 @@ export const contactsApi = createApi({
                 method: 'PUT',
                 body: contact
             }),
-            invalidatesTags: ['ContactTag']
+            invalidatesTags: ['Contact']
         }),
         deleteContact: builder.mutation({
             query: (id) => ({
                 url: `/contacts/${id}`,
                 method: 'DELETE'
             }),
-            invalidatesTags: ['ContactTag']
+            invalidatesTags: ['Contact']
         })
     })
 });
